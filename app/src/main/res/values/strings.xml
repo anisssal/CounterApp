@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Counter</string>
+    <string name="vs">vs</string>
+    <string name="basketball">Basketball</string>
+    <string name="football">Football</string>
+    <string name="team_name">Team Name</string>
+</resources>
