@@ -89,7 +89,7 @@ public class FootballCounter extends AppCompatActivity implements View.OnClickLi
 
     private void setScore(TextView score) {
         int a = Integer.parseInt((score.getText().toString())) + 1;
-        score.setText(a + "");
+        score.setText(a+"");
 
 
     }

@@ -14,6 +14,8 @@
         android:orientation="horizontal">
 
         <RelativeLayout
+            android:elevation="5dp"
+            android:background="#fffcfc"
             android:id="@+id/relativeTeamA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,6 +50,8 @@
             android:background="#123"></View>
 
         <RelativeLayout
+            android:background="#fffcfc"
+
             android:id="@+id/relativeTeamB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,6 +120,8 @@
 
 
         <Button
+            style="@style/butonred"
+            android:textStyle="bold"
             android:id="@+id/goalA"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
@@ -132,6 +138,8 @@
 
 
         <Button
+            style="@style/butonred"
+
             android:id="@+id/goalB"
             android:layout_marginLeft="20dp"
             android:layout_weight="1"
@@ -151,7 +159,9 @@
 
 
         <Button
+            android:padding="15dp"
             android:id="@+id/btnSave"
+            style="@style/butonred"
             android:text="Save This Match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

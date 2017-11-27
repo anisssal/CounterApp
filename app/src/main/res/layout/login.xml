@@ -71,7 +71,9 @@
             android:padding="10dp"
             android:textColor="@color/black"
             android:textCursorDrawable="@drawable/edittextcursorcolor"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            />
 
         <EditText
             android:id="@+id/inPass2"
@@ -79,10 +81,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
             android:background="@drawable/bg_login"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/edittextcursorcolor"
             android:hint="Confirm Password"
             android:padding="10dp"
             android:textSize="15sp"
-            android:visibility="gone" />
+            android:visibility="gone"
+        android:inputType="textPassword"/>
+
 
     </LinearLayout>
 

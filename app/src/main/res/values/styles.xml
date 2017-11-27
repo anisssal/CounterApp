@@ -24,5 +24,10 @@
         <item name="android:background">@color/red</item>
     </style>
 
+    <style name="butonred" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="android:background">@color/red</item>
+        <item name="android:textColor">@color/mdtp_white</item>
+    </style>
+
 
 </resources>
