@@ -10,6 +10,24 @@ public class Match {
     private int scoreA;
     private int scoreB;
     private String date;
+    private String matchname;
+    boolean sepakbola;
+
+    public boolean setSepakbola() {
+        return sepakbola;
+    }
+
+    public void setSepakbola(boolean sepakbola) {
+        this.sepakbola = sepakbola;
+    }
+
+    public String getMatchname() {
+        return matchname;
+    }
+
+    public void setMatchname(String matchname) {
+        this.matchname = matchname;
+    }
 
     public String getNteamA() {
         return nteamA;

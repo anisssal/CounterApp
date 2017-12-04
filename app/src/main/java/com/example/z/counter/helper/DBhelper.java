@@ -23,13 +23,37 @@ public class DBhelper extends SQLiteOpenHelper {
     private static final String COLUMN_USER_ID = "user_id";
     private static final String COLUMN_USER_NAME = "user_name";
     private static final String COLUMN_USER_PASSWORD = "user_password";
+    private static final String COLUMN_NAME = "nama";
+    private static final String COLUMN_EMAIL= "email";
+    private static final String COLUMN_PHONE= "pnumber";
+    private static final String COLUMN_IMAGE = "image";
 
-
-    public static String getTableMatch() {
-        return TABLE_MATCH;
+    public static String getColumnName() {
+        return COLUMN_NAME;
     }
 
-    private static final String TABLE_MATCH = "matchtable";
+    public static String getColumnEmail() {
+        return COLUMN_EMAIL;
+    }
+
+    public static String getColumnPhone() {
+        return COLUMN_PHONE;
+    }
+
+    public static String getColumnImage() {
+        return COLUMN_IMAGE;
+    }
+
+    public static String getTableFtMatch() {
+        return TABLE_FT_MATCH;
+    }
+
+    private static final String TABLE_FT_MATCH = "matchfttable";
+    private static final String TABLE_BS_MATCH = "matchbstable";
+
+    public static String getTableBsMatch() {
+        return TABLE_BS_MATCH;
+    }
 
     private static final String COL_MATCHID = "match_id";
 
@@ -38,7 +62,13 @@ public class DBhelper extends SQLiteOpenHelper {
     }
 
     private static final String COL_NTEAMA= "timAnama";
-    private static final String COL_NTEAMB = "tumBnama";
+    private static final String COL_NTEAMB = "timBnama";
+    private static final String COL_MATCH_NAME = "matchname";
+
+    public static String getColMatchName() {
+        return COL_MATCH_NAME;
+    }
+
     private static final String COL_SCOREA = "scorea";
     private static final String COL_SCOREB = "scoreb";
     private static final String COL_DATE= "date";
@@ -73,10 +103,27 @@ public class DBhelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
          String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
-                + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
-                + COLUMN_USER_PASSWORD + " TEXT" + ")";
-        String CREATE_MATCH_TABLE = "CREATE TABLE "+TABLE_MATCH+" ("
+                + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                 + COLUMN_USER_NAME + " TEXT,"
+                + COLUMN_USER_PASSWORD + " TEXT,"
+                 +COLUMN_IMAGE+" BLOB NULL, "
+                +COLUMN_NAME+" TEXT NULL,"
+                +COLUMN_EMAIL+" TEXT NULL,"
+                +COLUMN_PHONE+" TEXT NULL"+   ")";
+
+
+        String CREATE_MATCH_FT_TABLE = "CREATE TABLE "+ TABLE_FT_MATCH +" ("
                 +COL_MATCHID+" INTEGER PRIMARY KEY AUTOINCREMENT, "
+                +COL_MATCH_NAME+" TEXT,"
+                +COL_NTEAMA+" TEXT, "
+                +COL_NTEAMB+" TEXT, "
+                +COL_SCOREA+" INTEGER,"
+                +COL_SCOREB+" INTEGER,"
+                +COL_DATE+" TEXT)";
+
+        String CREATE_MATCH_BS_TABLE = "CREATE TABLE "+ TABLE_BS_MATCH+" ("
+                +COL_MATCHID+" INTEGER PRIMARY KEY AUTOINCREMENT, "
+                +COL_MATCH_NAME+" TEXT,"
                 +COL_NTEAMA+" TEXT, "
                 +COL_NTEAMB+" TEXT, "
                 +COL_SCOREA+" INTEGER,"
@@ -87,7 +134,8 @@ public class DBhelper extends SQLiteOpenHelper {
 
 
         db.execSQL(CREATE_USER_TABLE);
-        db.execSQL(CREATE_MATCH_TABLE);
+        db.execSQL(CREATE_MATCH_FT_TABLE);
+        db.execSQL(CREATE_MATCH_BS_TABLE);
     }
 
     @Override

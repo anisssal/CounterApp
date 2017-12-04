@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#9c9b9b</color>
-    <color name="colorAccent">#D50000</color>
-    <color name="red">#D50000</color>
+    <color name="colorPrimaryDark">#9E9E9E</color>
+    <color name="colorAccent">#F31905</color>
+    <color name="red">#F31905</color>
+    <color name="redcerah">#f4584e</color>
+    <color name="merah" >#F31905</color>
     <color name="abuminopa">#8cc9c9c9</color>
-    <color name="putihradaabu">#f6f7f7</color>
+    <color name="putihradaabu">#fff5f4</color>
     <color name="black">#000000</color>
     <color name="mdtp_white">#ffffff</color>
 </resources>

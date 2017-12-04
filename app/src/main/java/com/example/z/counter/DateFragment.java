@@ -22,6 +22,7 @@ public  class DateFragment extends DialogFragment implements DatePickerDialog.On
 
     public String dateee ;
     int year, month, day;
+
     EditText editText = PertandinganBaru.edtDate;
     String hari;
     public DateFragment() {
@@ -42,9 +43,9 @@ public  class DateFragment extends DialogFragment implements DatePickerDialog.On
 
          String a = editText.getText().toString();
             StringTokenizer token = new StringTokenizer(a);
-            day = Integer.parseInt(token.nextToken("/"));
-            month = Integer.parseInt(token.nextToken("/"));
-            year = Integer.parseInt(token.nextToken("/"));
+            day = Integer.parseInt(token.nextToken("-"));
+            month = Integer.parseInt(token.nextToken("-"));
+            year = Integer.parseInt(token.nextToken("-"));
 
         }
 
@@ -55,7 +56,8 @@ public  class DateFragment extends DialogFragment implements DatePickerDialog.On
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
         month = month+1;
-        dateee = new StringBuilder().append(day).append("/").append(month).append("/").append(year)+"";
+        dateee = new StringBuilder().
+                append(day).append("-").append(month).append("-").append(year)+"";
         editText.setText(dateee);
 
 

@@ -5,20 +5,60 @@ package com.example.z.counter.model;
  */
 
 public class User {
-    int id ;
-    String nama, password;
+    private byte[] bytes;
+    private int id ;
+    private String usernama;
+    private String password;
+    private String nama;
+    private String email;
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    private String phonenumber;
+
+    public byte[] getBytes() {
+        return bytes;
+    }
+
+    public void setBytes(byte[] bytes) {
+        this.bytes = bytes;
+    }
+
+
 
     public User() {
     }
 
-    public User(String nama, String password) {
-        this.nama = nama;
+    public User(String usernama, String password) {
+        this.usernama = usernama;
         this.password = password;
     }
 
-    public User(int id, String nama, String password) {
+    public User(int id, String usernama, String password) {
         this.id = id;
-        this.nama = nama;
+        this.usernama = usernama;
         this.password = password;
     }
 
@@ -30,12 +70,12 @@ public class User {
         this.id = id;
     }
 
-    public String getNama() {
-        return nama;
+    public String getUsernama() {
+        return usernama;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setUsernama(String usernama) {
+        this.usernama = usernama;
     }
 
     public String getPassword() {

@@ -27,15 +27,16 @@ public class ListHelper {
 
     }
 
-    public boolean inputMatch(String nteamA, String nteamB, int scA , int scB, String date ){
+    public boolean inputMatchFt(String nteamA, String nteamB, int scA , int scB, String date , String matchname){
         tryGetAcces(mdBhelper.getWritableDatabase());
         ContentValues contentValues = new ContentValues();
         contentValues.put(mdBhelper.getColNteama(), nteamA);
         contentValues.put(mdBhelper.getColNteamb(), nteamB);
         contentValues.put(mdBhelper.getColScorea(), scA);
         contentValues.put(mdBhelper.getColScoreb(), scB);
+        contentValues.put(mdBhelper.getColMatchName(), matchname);
         contentValues.put(mdBhelper.getColDate(), date);
-        long insertID = sqLiteDatabase.insert(mdBhelper.getTableMatch(), null, contentValues);
+        long insertID = sqLiteDatabase.insert(mdBhelper.getTableFtMatch(), null, contentValues);
         if (insertID>-1){
             return true;
         }else {
@@ -45,11 +46,48 @@ public class ListHelper {
 
     }
 
-    public ArrayList <Match> getAllUser(){
+    public boolean inputMatchBs(String nteamA, String nteamB, int scA , int scB, String date , String matchname){
+        tryGetAcces(mdBhelper.getWritableDatabase());
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(mdBhelper.getColNteama(), nteamA);
+        contentValues.put(mdBhelper.getColNteamb(), nteamB);
+        contentValues.put(mdBhelper.getColScorea(), scA);
+        contentValues.put(mdBhelper.getColScoreb(), scB);
+        contentValues.put(mdBhelper.getColMatchName(), matchname);
+        contentValues.put(mdBhelper.getColDate(), date);
+        long insertID = sqLiteDatabase.insert(mdBhelper.getTableBsMatch(), null, contentValues);
+        if (insertID>-1){
+            return true;
+        }else {
+            return false;
+        }
+
+
+    }
+
+    public ArrayList <Match> getAllUserFt(){
         tryGetAcces(mdBhelper.getReadableDatabase());
         String [] col = {mdBhelper.getColMatchid(), mdBhelper.getColNteama(),mdBhelper.getColNteamb() , mdBhelper.getColScorea(),
-                mdBhelper.getColScoreb(),mdBhelper.getColDate()};
-        Cursor cursor =sqLiteDatabase.query (mdBhelper.getTableMatch() , col ,null, null, null
+                mdBhelper.getColScoreb(),mdBhelper.getColDate(), mdBhelper.getColMatchName()};
+        Cursor cursor =sqLiteDatabase.query (mdBhelper.getTableFtMatch() , col ,null, null, null
+                , null, null);
+        ArrayList <Match> m = new ArrayList<>();
+        if (cursor.moveToFirst()){
+            while (!cursor.isAfterLast()){
+                Match match = cursorToMatch(cursor);
+                m.add(match);
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        sqLiteDatabase.close();
+        return m;
+    }
+    public ArrayList <Match> getAllUserBs(){
+        tryGetAcces(mdBhelper.getReadableDatabase());
+        String [] col = {mdBhelper.getColMatchid(), mdBhelper.getColNteama(),mdBhelper.getColNteamb() , mdBhelper.getColScorea(),
+                mdBhelper.getColScoreb(),mdBhelper.getColDate(), mdBhelper.getColMatchName()};
+        Cursor cursor =sqLiteDatabase.query (mdBhelper.getTableBsMatch() , col ,null, null, null
                 , null, null);
         ArrayList <Match> m = new ArrayList<>();
         if (cursor.moveToFirst()){
@@ -69,10 +107,13 @@ public class ListHelper {
         tempM.setNteamA(cursor.getString(cursor.getColumnIndex(mdBhelper.getColNteama())));
         tempM.setNteamB(cursor.getString(cursor.getColumnIndex(mdBhelper.getColNteamb())));
         tempM.setDate(cursor.getString(cursor.getColumnIndex(mdBhelper.getColDate())));
+        tempM.setMatchname(cursor.getString(cursor.getColumnIndex(mdBhelper.getColMatchName())));
         tempM.setScoreA(cursor.getInt(cursor.getColumnIndex(mdBhelper.getColScorea())));
         tempM.setScoreB(cursor.getInt(cursor.getColumnIndex(mdBhelper.getColScoreb())));
         return tempM;
     }
+
+
 
 
     private void tryGetAcces (SQLiteDatabase sqLiteDatabase){

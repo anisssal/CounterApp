@@ -59,8 +59,5 @@ public class LoginInputValidation {
         String value = editText.getText().toString().trim();
         return value;
     }
-    public void hideKeyboardFrom2(EditText editText){
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
-    };
+
 }

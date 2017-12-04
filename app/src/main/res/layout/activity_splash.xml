@@ -1,9 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    android:id="@+id/relatip" xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F31905"
     tools:context="com.example.z.counter.activity.SplashActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imgCounter"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
+
+        android:layout_gravity="center"
+        android:contentDescription="Score Counter "
+        android:src="@drawable/counter" />
+
+
+    <TextView
+        android:id="@+id/txtcounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:text="Score Counter"
+        android:textColor="@color/mdtp_white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtcounter"
+        android:layout_centerHorizontal="true"
+        android:text="Apps"
+        android:textColor="@color/mdtp_white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <ProgressBar
+
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_alignRight="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:id="@+id/btnsignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/txthaveanan"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_ptom"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:text="Sign Up"
+        android:textColor="@drawable/txt_mtop"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/txthaveanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnsignin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:alpha="1"
+        android:text="Have an account?"
+        android:textColor="#dedede" />
+
+    <Button
+        android:id="@+id/btnsignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_mtop"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:text="Sign In"
+        android:textColor="@drawable/txt_ptom"
+        android:textSize="17sp" />
+
+
+</RelativeLayout>
