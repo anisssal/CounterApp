@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_gradient"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <EditText
+                    android:drawableRight="@drawable/ic_person_pin_black_24dp"
+                    android:id="@+id/editProfilName"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:paddingLeft="10dp"
+                    android:hint="Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:singleLine="true"
+
+                android:drawableRight="@drawable/ic_email_black_24dp"
+                android:id="@+id/editProfilEmail"
+                android:paddingLeft="10dp"
+                android:imeOptions="actionNext"
+
+                android:hint="Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:singleLine="true"
+
+                android:drawableRight="@drawable/ic_contact_phone_black_24dp"
+                android:id="@+id/editProfilPN"
+                android:imeOptions="actionNext"
+                android:paddingLeft="10dp"
+                android:hint="Phone Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+
+                android:singleLine="true"
+                android:drawableRight="@drawable/ic_lock_outline_black_24dp"
+                android:id="@+id/edtConfirmPass"
+                android:imeOptions="actionDone"
+                android:paddingLeft="10dp"
+                android:hint="Confirm Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnUpdateProfil"
+            android:layout_marginTop="16dp"
+            android:textColor="@drawable/txt_ptom"
+            android:paddingLeft="100dp"
+            android:paddingRight="100dp"
+            android:background="@drawable/btn_lengkung_gbng"
+            android:layout_gravity="center_horizontal"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imgProfil"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/images"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/txtYourprofil"
+        android:layout_below="@+id/imgProfil"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Profil"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
+</ScrollView>
+
